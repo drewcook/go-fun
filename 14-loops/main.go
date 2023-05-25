@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	fmt.Println("loops in golang")
 
 	// slices
@@ -12,7 +12,7 @@ func main()  {
 	fmt.Println("---")
 
 	// for loop with iterator
-	for i:=0; i<len(days); i++ {
+	for i := 0; i < len(days); i++ {
 		fmt.Println(days[i])
 	}
 
@@ -54,13 +54,28 @@ func main()  {
 		rogueValue++
 
 		// goto usage
+		switch {
+		case rogueValue == 1:
+			fmt.Println("one is fun")
+		case rogueValue == 2:
+			fmt.Println("value is deuce")
+		case rogueValue == 3:
+		case rogueValue == 1:
+			goto den
+		default:
+			goto dco
+		}
+
 		if rogueValue == 2 {
 			// this jumps out of the loop and goes to the definition of the goto; in this case a log statement
-			goto dco
+			// goto dco
+			goto den
 		}
 	}
 
 	// goto
-	dco:
-		fmt.Println("dco is learning golang")
+dco:
+	fmt.Println("dco is learning golang")
+den:
+	fmt.Println("flying to denver")
 }
